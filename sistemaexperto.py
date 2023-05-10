@@ -1,14 +1,12 @@
+""" Sistema experto para diagnosticar enfermedades. """""
 from pyknow import Fact, Rule, KnowledgeEngine, MATCH
 
 class Diagnostico(Fact):
     pass
-
 class Enfermedad(Fact):
     pass
-
 class Sintoma(Fact):
     pass
-
 class SistemaExperto(KnowledgeEngine):
     @Rule(Diagnostico(enfermedad=MATCH.enfermedad, tratamiento=MATCH.tratamiento),
           Sintoma('Tos'), Sintoma('Fiebre'), Sintoma('Dolor de cabeza'))

@@ -1,12 +1,8 @@
-# api que recibe json
 from flask import Flask, jsonify, request
-#importar sistema experto
 from sistemaexperto import SistemaExperto, Sintoma
 
 app = Flask(__name__)
-"""
-Este módulo contiene la aplicación Flask para el sistema experto.
-"""
+
 
 @app.route('/diagnosticar', methods=['POST'])
 def diagnosticar():
@@ -17,15 +13,17 @@ def diagnosticar():
     sintomas = datos["sintomas"]
 
     sistema_experto = SistemaExperto()
+    sistema_experto.reset()
 
     for sintoma in sintomas:
         sistema_experto.declare(Sintoma(sintoma=sintoma))
 
-    sistema_experto.reset()
-
     sistema_experto.run()
-
-    enfermedad = sistema_experto.facts[-1]
+    if sistema_experto.facts:
+        enfermedad = sistema_experto.facts[-1]
+    # Resto del código
+    else:
+        enfermedad = None
 
     if enfermedad:
         resultado = {
@@ -41,10 +39,11 @@ def diagnosticar():
             "sexo": sexo,
             "edad": edad,
             "enfermedad": "Desconocida",
-            "tratamiento": "No se encontró una enfermedad que coincida con los síntomas proporcionados."
+            "tratamiento": "No se encontró una enfermedad que coincida."
         }
 
     return jsonify(resultado)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
