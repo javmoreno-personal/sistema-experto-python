@@ -10,14 +10,12 @@ class Sintoma(Fact):
     pass
 
 class SistemaExperto(KnowledgeEngine):
-    @Rule(Diagnostico(enfermedad=MATCH.enfermedad, tratamiento=MATCH.tratamiento))
+    @Rule(Diagnostico(enfermedad=MATCH.enfermedad, tratamiento=MATCH.tratamiento),
+          Sintoma('Tos'), Sintoma('Fiebre'), Sintoma('Dolor de cabeza'))
     def mostrar_diagnostico(self, enfermedad, tratamiento):
         self.declare(Enfermedad(enfermedad=enfermedad, tratamiento=tratamiento))
 
 base_reglas = [
     SistemaExperto(),
     Rule(Diagnostico(enfermedad='Gripe', tratamiento='Tomar paracetamol'))
-        .salience(-2)
-        .AND(Sintoma('Tos'), Sintoma('Fiebre'), Sintoma('Dolor de cabeza')),
-    # Agrega más reglas para otras enfermedades y síntomas aquí
 ]

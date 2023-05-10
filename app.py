@@ -1,9 +1,12 @@
 # api que recibe json
-from flask import Flask, request, jsonify
+from flask import Flask, jsonify, request
 #importar sistema experto
 from sistemaexperto import SistemaExperto, Sintoma
 
 app = Flask(__name__)
+"""
+Este módulo contiene la aplicación Flask para el sistema experto.
+"""
 
 @app.route('/diagnosticar', methods=['POST'])
 def diagnosticar():
