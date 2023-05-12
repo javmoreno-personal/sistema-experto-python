@@ -37,6 +37,9 @@ Consiste en crear un sistema experto basado en conocimiento para la detección d
 
 - [x] **Python**
 - [x] **Flask**
+- [x] **experta**
+- [x] **Heroku**
+
 
 Ejemplo JSON de entrada
 
@@ -76,3 +79,22 @@ Ejemplo JSON de salida
 6. Seleccionar la opcion de View
 7. Seleccionar la opcion de Open app
 
+
+## instalar dependencias
+
+```bash
+pip install -r requirements.txt
+```
+
+Entorno virtual > sirve para aislar las dependencias de un proyecto y evitar conflictos con otros proyectos
+
+se activa con el comando desde la powershell o cmd (windows) en mac o linux se usa el comando source
+
+```bash
+./entorno/Scripts/activate
+```
+```bash
+`
+```bash
+python -m venv entorno
+```
