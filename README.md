@@ -31,13 +31,13 @@
 
 ## Descripción del proyecto
 
-Consiste en crear un sistema experto basado en conocimiento para la detección de enfermedades, el cual se basa en un conjunto de reglas que se le proporcionan al sistema para que este pueda inferir y llegar a una conclusión. Inialmente se le pedira al usuario que ingrese nombre, sexo y edad para poder realizar la inferencia de la enfermedad, posteriormente se le dara una tabla para que seleccione los sintomas que presenta, y finalmente se le mostrara el resultado de la posible enfermedad que tiene y el tratamiento que debe seguir.
+Consiste en crear un sistema experto difuso basado en conocimiento para la detección de enfermedades, el cual se basa en un conjunto de reglas que se le proporcionan al sistema para que este pueda inferir y llegar a una conclusión. Inialmente se le pedira al usuario que ingrese nombre, sexo y edad para poder realizar la inferencia de la enfermedad, posteriormente se le dara una tabla para que seleccione los sintomas que presenta, y finalmente se le mostrara el resultado de la posible enfermedad que tiene y el tratamiento que debe seguir.
 
 ## Requisitos
 
 - [x] **Python**
 - [x] **Flask**
-- [x] **experta**
+- [x] **Skfuzzy**
 - [x] **Heroku**
 
 
